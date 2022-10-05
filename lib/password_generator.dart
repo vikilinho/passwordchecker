@@ -27,7 +27,7 @@ String generatePassword(bool includeLowercase, bool includeNumbers,
     password += allowedChars[randomInt];
     i++;
   }
-  logg.log(passwordText);
+
   passwordText = password;
   return password;
 }
