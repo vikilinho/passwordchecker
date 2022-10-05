@@ -32,18 +32,19 @@ class _HomeState extends State<Home> {
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
+          // ignore: prefer_const_literals_to_create_immutables
           children: [
-            TextField(
+            const TextField(
               decoration: InputDecoration(
-                label: const Text("Username"),
+                label: Text("Username"),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            TextField(
+            const TextField(
               decoration: InputDecoration(
-                label: const Text("Password"),
+                label: Text("Password"),
               ),
             )
           ],

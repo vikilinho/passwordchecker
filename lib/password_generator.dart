@@ -1,15 +1,29 @@
+import 'dart:math';
+
 String generatePassword(bool includeLowercase, bool includeNumbers,
     bool includeUpperCase, bool includeSpecialChar, double charNum) {
   String lowerCaseLetters = "abcdefghijklmnopqrstuvwxyz";
   String upperCaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   String numbers = "0123456789";
   String specialChars = "@#=+!£\$%&?[](){}";
-  String _allowedChars = "";
+  String allowedChars = "";
 
-  _allowedChars += (includeLowercase ? lowerCaseLetters : '');
-  _allowedChars += (includeUpperCase ? upperCaseLetters : '');
-  _allowedChars += (includeSpecialChar ? specialChars : '');
-  _allowedChars += (includeNumbers ? numbers : '');
+  int i = 0;
+  String password = "";
 
-  return '';
+  allowedChars += (includeLowercase ? lowerCaseLetters : '');
+  allowedChars += (includeUpperCase ? upperCaseLetters : '');
+  allowedChars += (includeSpecialChar ? specialChars : '');
+  allowedChars += (includeNumbers ? numbers : '');
+
+  //Create password
+  while (i < charNum.round()) {
+    //Get random int
+    int randomInt = Random.secure().nextInt(allowedChars.length);
+    //Get random char and append it to the password
+    password += allowedChars[randomInt];
+    i++;
+  }
+
+  return password;
 }
