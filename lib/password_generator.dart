@@ -1,6 +1,8 @@
 import 'dart:developer' as logg;
 import 'dart:math';
 
+import 'package:passwordchecker/main.dart';
+
 String generatePassword(bool includeLowercase, bool includeNumbers,
     bool includeUpperCase, bool includeSpecialChar, double charNum) {
   String lowerCaseLetters = "abcdefghijklmnopqrstuvwxyz";
@@ -25,6 +27,7 @@ String generatePassword(bool includeLowercase, bool includeNumbers,
     password += allowedChars[randomInt];
     i++;
   }
-  logg.log(password);
+  logg.log(passwordText);
+  passwordText = password;
   return password;
 }
