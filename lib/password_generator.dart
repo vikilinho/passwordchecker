@@ -1,10 +1,15 @@
-String generatePassword(bool includeLetters, bool includeNumbers,
+String generatePassword(bool includeLowercase, bool includeNumbers,
     bool includeUpperCase, bool includeSpecialChar, double charNum) {
   String lowerCaseLetters = "abcdefghijklmnopqrstuvwxyz";
   String upperCaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   String numbers = "0123456789";
-  String special = "@#=+!£\$%&?[](){}";
+  String specialChars = "@#=+!£\$%&?[](){}";
   String _allowedChars = "";
 
-  _allowedChars += (includeLetters ? lowerCaseLetters : '');
+  _allowedChars += (includeLowercase ? lowerCaseLetters : '');
+  _allowedChars += (includeUpperCase ? upperCaseLetters : '');
+  _allowedChars += (includeSpecialChar ? specialChars : '');
+  _allowedChars += (includeNumbers ? numbers : '');
+
+  return '';
 }
