@@ -1,3 +1,4 @@
+import 'dart:developer' as logg;
 import 'dart:math';
 
 String generatePassword(bool includeLowercase, bool includeNumbers,
@@ -24,6 +25,6 @@ String generatePassword(bool includeLowercase, bool includeNumbers,
     password += allowedChars[randomInt];
     i++;
   }
-
+  logg.log(password);
   return password;
 }

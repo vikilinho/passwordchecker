@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:passwordchecker/home.dart';
 
+var passwordText = "";
+
 void main() {
   runApp(const MyApp());
 }

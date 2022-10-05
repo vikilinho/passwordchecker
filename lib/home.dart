@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:passwordchecker/main.dart';
+import 'package:passwordchecker/password_generator.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -11,6 +13,9 @@ class _HomeState extends State<Home> {
   late String _password;
   double passwordStrength = 0;
   String passwordInfo = "";
+  final TextEditingController _usernamecontroller = TextEditingController();
+  final TextEditingController _passwordcontroller = TextEditingController()
+    ..text = passwordText;
 
   RegExp numReg = RegExp(r".*[0-9].*");
   RegExp letterReg = RegExp(r".*[A-Za-z].*");
@@ -34,19 +39,28 @@ class _HomeState extends State<Home> {
           mainAxisAlignment: MainAxisAlignment.center,
           // ignore: prefer_const_literals_to_create_immutables
           children: [
-            const TextField(
-              decoration: InputDecoration(
+            TextField(
+              controller: _usernamecontroller,
+              decoration: const InputDecoration(
                 label: Text("Username"),
               ),
             ),
             const SizedBox(
               height: 20,
             ),
-            const TextField(
-              decoration: InputDecoration(
+            // ignore: prefer_const_constructors
+            TextField(
+              controller: _passwordcontroller,
+              decoration: const InputDecoration(
                 label: Text("Password"),
               ),
-            )
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            ElevatedButton(
+                onPressed: () => generatePassword(true, true, true, true, 10),
+                child: const Text("Generate Password"))
           ],
         ),
       ),
