@@ -62,7 +62,7 @@ class _HomeBaseState extends ConsumerState<HomeBase> {
                 ),
               ),
               Visibility(
-                  visible: suggest, child: Text("Suggestion: $passwordvalue")),
+                  visible: suggest, child: Text("Suggestion: $passwordText")),
 
               const SizedBox(
                 height: 20,
