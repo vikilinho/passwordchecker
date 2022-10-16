@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:passwordchecker/home.dart';
+import 'package:passwordchecker/homebase.dart';
 
 var passwordText = "password";
 // create the provider you want to use
@@ -20,6 +20,6 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const Home());
+        home: const HomeBase());
   }
 }
