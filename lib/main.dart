@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:passwordchecker/home.dart';
 
 var passwordText = "password";
 
 void main() {
-  runApp(const MyApp());
+  runApp(const ProviderScope(child: MyApp())); //wrap with provider scope
 }
 
 class MyApp extends StatelessWidget {
