@@ -4,7 +4,7 @@ import 'package:passwordchecker/homebase.dart';
 
 var passwordText = "password";
 // create the provider you want to use
-final helloWorldProvider = Provider<String>((ref) => 'password');
+final passwordProvider = Provider<String>((ref) => 'pass');
 void main() {
   runApp(const ProviderScope(child: MyApp())); //wrap with provider scope
 }

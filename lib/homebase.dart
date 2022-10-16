@@ -16,7 +16,8 @@ class _HomeBaseState extends ConsumerState<HomeBase> {
   String passwordInfo = "";
   bool suggest = false;
   final TextEditingController _usernamecontroller = TextEditingController();
-  final TextEditingController _passwordcontroller = TextEditingController();
+  final TextEditingController _passwordcontroller = TextEditingController()
+    ..text = passwordText;
 
   RegExp numReg = RegExp(r".*[0-9].*");
   RegExp letterReg = RegExp(r".*[A-Za-z].*");
@@ -34,6 +35,8 @@ class _HomeBaseState extends ConsumerState<HomeBase> {
 
   @override
   Widget build(BuildContext context) {
+    final String passwordvalue =
+        ref.watch(passwordProvider); //watch for the password provider
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -59,7 +62,7 @@ class _HomeBaseState extends ConsumerState<HomeBase> {
                 ),
               ),
               Visibility(
-                  visible: suggest, child: Text("Suggestion: $passwordText")),
+                  visible: suggest, child: Text("Suggestion: $passwordvalue")),
 
               const SizedBox(
                 height: 20,
